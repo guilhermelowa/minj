@@ -1,6 +1,6 @@
 import argparse
-from sleep_log import sleep_log
-from metrics_log import metrics_log
+from minj.sleep_log import sleep_log
+from minj.metrics_log import metrics_log
 
 def main():
     parser = argparse.ArgumentParser(description='Minimalist Journal on CLI')
