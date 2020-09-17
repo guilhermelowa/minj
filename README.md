@@ -13,6 +13,23 @@ To get help: `minj -h`
 
 `minj metrics` to log the metrics that you're tracking.
 
+### Autorun metrics
+You can add minj to your `crontab` so you have your're prompted periodically to check your metrics. 
+
+To do so, open a terminal and type `$DISPLAY`, save this number (usually :0).
+
+Next, know how-to launch your terminal from CLI. On Gnome systems it is usually `gnome-terminal`. Get the location of the command using `which gnome-terminal`. You will also need to know the path to _minj_: `which minj`.
+
+Now think about how often do you want to run the metrics checker. I want it at 9:00, 12, 15, 18 and 21:00.
+
+Finally, add a job to _cron_ using `crontab -e`. Add the following line to your crontab file:
+
+`0 <hours> * * * DISPLAY=:0 /path/to/terminal -- /path/to/minj`
+
+In my case:
+
+`0 9,12,15,18,21 * * * DISPLAY=:1 /usr/bin/gnome-terminal -- /home/<usr>/.local/bin/minj metrics`
+
 ## References:
 - [Peter Lyons on career advice](https://peterlyons.com/leveling-up/#pillar3)
 - [Jeff Atwood (StackOverflow co-founder) on writing](https://blog.codinghorror.com/how-to-write-without-writing/)
@@ -34,6 +51,24 @@ Você pode ler as opções utilizando `minj -h`
 `minj sleep 22:30 6:30` registra o horário que você dormiu (22:30) e que acordou (6:30), respectivamente.
 
 `minj metrics` registra as métricas que você está medindo atualmente.
+
+### Rodando automaticamente
+Você pode adicionar minj no `crontab` para rodar automaticamente e te perguntar sobre as métricas que estão sendo monitoradas.
+
+Para fazer isso, abra um terminal e digite `$DISPLAY`. Salve esse número (normalmente :0)
+
+Depois, descubra como rodar um terminal pela linha de comando. Em sistemas Gnome geralmente é `gnome-terminal`. Adquira a localização do comando utilizando `which gnome-terminal`. Você também vai precisar do caminho para o _minj_: `which minj`
+
+Agora pense nos horários que você quer que seja perguntado sobre as métricas. Eu coloquei 9h, 12, 15, 18 e 21h.
+
+Finalmente, adicione este job no _cron_ com `crontab -e`. Adicione a seguinte linha ao arquivo:
+
+`0 <hours> * * * DISPLAY=:0 /path/to/terminal -- /path/to/minj`
+
+No meu caso:
+
+`0 9,12,15,18,21 * * * DISPLAY=:1 /usr/bin/gnome-terminal -- /home/<usr>/.local/bin/minj metrics`
+
 
 ## Referências
 - [Peter Lyons on career advice](https://peterlyons.com/leveling-up/#pillar3)
