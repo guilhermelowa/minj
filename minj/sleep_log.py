@@ -1,6 +1,7 @@
 import argparse
 from os.path import isfile
 from datetime import datetime, date, time
+from config import LOGS_PATH
 
 def calc_duration(sleep_time, wakeup_time):
     sleep_time = datetime.strptime(sleep_time, "%H:%M").time()
@@ -19,11 +20,12 @@ def format_time(sleep_time, wakeup_time):
     return sleep_time, wakeup_time
 
 def write_file(day, sleep_time, wakeup_time, sleep_duration, file_name="sleep_times.csv"):
-    if not isfile(file_name):
-        with open(file_name, "w") as f:
+    file_path = LOGS_PATH + file_name
+    if not isfile(file_path):
+        with open(file_path, "w") as f:
             f.write("day, sleep_time, wakeup_time, sleep_duration\n")
             
-    with open(file_name, "a") as f:
+    with open(file_path, "a") as f:
         f.write(f'{day},{sleep_time},{wakeup_time},{sleep_duration}\n')
 
 

@@ -2,20 +2,22 @@ import argparse
 from random import shuffle
 from os.path import isfile
 from datetime import datetime
+from config import LOGS_PATH
 
 def get_metrics(topic):
     return int(input(f'{topic}: '))
 
 def write_file(topics, metrics, file_name="metrics.csv"):
-    if not isfile(file_name):
+    file_path = LOGS_PATH + file_name
+    if not isfile(file_path):
         header = 'time,' + ','.join(topics)
-        with open(file_name, "w") as f:
+        with open(file_path, "w") as f:
             f.write(f'{header}\n')
 
     entry = datetime.now().strftime('%Y-%m-%d %H:%M')
     for topic in topics:
         entry += ',' + str(metrics[topic])
-    with open(file_name, "a") as f:
+    with open(file_path, "a") as f:
         f.write(f'{entry}\n')
 
 def metrics_log(input_args=None):
