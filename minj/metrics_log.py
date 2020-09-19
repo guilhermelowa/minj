@@ -1,9 +1,3 @@
-# TODO:
-# Add topic; remove topic; increment --help on those
-# Inserir no CRON pra rodar automático, sem eu precisar ativamente registrar
-# Roda isso como um programa direto, sem precisar python3 logger.py
-# Conferir os inputs dos usuários e corrigir se tiver problema
-
 import argparse
 from random import shuffle
 from os.path import isfile

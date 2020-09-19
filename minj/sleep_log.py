@@ -1,7 +1,3 @@
-# TODO:
-# Add script to add to crontab
-# Perform input validation
-
 import argparse
 from os.path import isfile
 from datetime import datetime, date, time
