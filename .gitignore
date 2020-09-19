@@ -1,3 +1,4 @@
+#python
 venv/
 __pycache__
 .idea
@@ -7,6 +8,7 @@ __pycache__
 .pytest_cache
 *.log
 
+# build
 build/
 dist/
 *.egg-info
@@ -18,5 +20,7 @@ dist/
 *.zip
 **/data/
 *.sqlite*
-TODOs.txt
 
+# project
+TODOs.txt
+config.py
