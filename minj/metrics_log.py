@@ -52,7 +52,7 @@ def read_file_header(file_path):
 
 def get_active_topics():
     if not isfile(ACTIVE_METRICS_PATH):
-        topics = ['alertness', 'motivation', 'emotions', 'social', 'productivity', 'restness', 'workout intensity', 'self-control']
+        topics = ['alertness', 'motivation', 'emotions', 'social', 'productivity', 'restness', 'workout intensity', 'self-control', 'attention']
         set_active_topics(topics)
     else:
         topics = read_file_header(ACTIVE_METRICS_PATH)
