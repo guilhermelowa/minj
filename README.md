@@ -34,6 +34,7 @@ In my case:
 - [Peter Lyons on career advice](https://peterlyons.com/leveling-up/#pillar3)
 - [Jeff Atwood (StackOverflow co-founder) on writing](https://blog.codinghorror.com/how-to-write-without-writing/)
 - [jrnl - Python Journal](https://github.com/jrnl-org/jrnl)
+- [pdiary](https://github.com/manipuladordedados/pdiary)
 
 # Diário minimalista
 Este é um diário minimalista para linha de comando (CLI).
