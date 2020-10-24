@@ -3,13 +3,14 @@ from os.path import isfile, expanduser
 from pathlib import Path
 from minj.sleep_log import sleep_log
 from minj.metrics_log import metrics_log
+from minj.activities import activities_log
 
 def main():
     if not isfile("config.py"):
         config()
 
     parser = argparse.ArgumentParser(description='Minimalist Journal on CLI')
-    parser.add_argument('function', choices=['metrics', 'sleep'], help='Function to call')
+    parser.add_argument('function', choices=['metrics', 'sleep', 'act'], help='Function to call')
     
     args, unknown_args = parser.parse_known_args()
     program = args.function
@@ -18,6 +19,8 @@ def main():
         metrics_log(unknown_args)
     if program == 'sleep':
         sleep_log(unknown_args)
+    if program == 'act':
+        activities_log(unknown_args)
 
 def config():
     if not isfile("config.py"):
