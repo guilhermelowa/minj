@@ -4,7 +4,7 @@ import fileinput
 from random import shuffle
 from os.path import isfile
 from datetime import datetime
-from config import CONFIG_PATH, LOGS_PATH
+from minj.config import CONFIG_PATH, LOGS_PATH
 
 METRICS_PATH = LOGS_PATH + "metrics.csv"
 ACTIVE_METRICS_PATH = LOGS_PATH + "active_metrics.txt"

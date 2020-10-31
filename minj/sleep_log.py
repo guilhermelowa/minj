@@ -1,7 +1,7 @@
 import argparse
 from os.path import isfile
 from datetime import datetime, date, time
-from config import LOGS_PATH
+from minj.config import LOGS_PATH
 
 def calc_duration(sleep_time, wakeup_time):
     sleep_time = datetime.strptime(sleep_time, "%H:%M").time()

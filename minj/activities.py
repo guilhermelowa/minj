@@ -3,7 +3,7 @@ import re
 import fileinput
 from os.path import isfile
 from datetime import datetime
-from config import LOGS_PATH
+from minj.config import LOGS_PATH
 
 
 MINIMAL_JOURNAL_PATH = LOGS_PATH + "minimal_journal.txt"
